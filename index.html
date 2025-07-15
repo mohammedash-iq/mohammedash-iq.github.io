@@ -3,13 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="logo.png" />
+    <title>Ash's Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <title>My Profile</title>
   </head>
-  <body>
-    <h1>Hello World!</h1>
-    <h3><a href="https://mohammedash-iq.github.io/about">About</a></h3>
-    <button href="https://mohammedash-iq.github.io/about">go to about</button>
+  <body data-theme="dark">
+    <nav>
+      <ul>
+        <li><a href="#learning">Learning</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#timeline">Journey</a></li>
+      </ul>
+      <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="toggle.png" alt="" />
+      </button>
+    </nav>
+
+    <section class="hero">
+      <h1>Hi, I’m Ash</h1>
+      <p>
+        A curious developer building my way from the ground up. This site is my
+        digital workshop, where I share what I’m learning, how I’m growing, and
+        the projects I’ve built along the way.
+      </p>
+    </section>
+
+    <section id="learning">
+      <h2 class="section-title">Current Learnings</h2>
+      <div class="cards" id="learning-cards"></div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Projects</h2>
+      <div class="cards" id="project-cards"></div>
+    </section>
+
+    <section id="timeline">
+      <h2 class="section-title">Journey</h2>
+      <div class="timeline-container" id="timeline-items"></div>
+    </section>
+    <script src="script.js"></script>
   </body>
 </html>
