@@ -1,46 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ash's Portfolio</title>
-    <link rel="stylesheet" href="https://mohammedash-iq.github.io/style.css" />
-  </head>
-  <body data-theme="dark">
-    <nav>
-      <ul>
-        <li><a href="#learning">Learning</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#timeline">Journey</a></li>
-      </ul>
-      <button class="theme-toggle" onclick="toggleTheme()">
-        <img src="toggle.png" alt="" />
-      </button>
-    </nav>
 
-    <section class="hero">
-      <h1>Hi, I’m Ash</h1>
-      <p>
-        A curious developer building my way from the ground up. This site is my
-        digital workshop, where I share what I’m learning, how I’m growing, and
-        the projects I’ve built along the way.
-      </p>
-    </section>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <title>Mohammed Ashiq — Portfolio</title>
+  <meta name="description" content="Portfolio — Mohammed Ashiq | Frontend Developer" />
+  
+</head>
 
-    <section id="learning">
-      <h2 class="section-title">Current Learnings</h2>
-      <div class="cards" id="learning-cards"></div>
-    </section>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">MA</div>
+        <div>
+          <div style="font-weight:700">Mohammed Ashiq</div>
+          <div style="font-size:12px;color:var(--muted)">Mangalore, Karnataka</div>
+        </div>
+      </div>
 
-    <section id="projects">
-      <h2 class="section-title">Projects</h2>
-      <div class="cards" id="project-cards"></div>
-    </section>
+      <nav>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <div class="controls">
+          <button id="toggleTheme" class="btn" title="Toggle light/dark" style="font-size:18px;line-height:1"><img
+              src="toggle.png" alt=""></button>
 
-    <section id="timeline">
-      <h2 class="section-title">Journey</h2>
-      <div class="timeline-container" id="timeline-items"></div>
-    </section>
-    <script src="https://mohammedash-iq.github.io/script.js"></script>
-  </body>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card">
+        <div class="headline">Frontend-focused developer — building practical, maintainable web apps</div>
+        <div class="sub">Minimal, modern portfolio with a developer vibe. Dynamic project loading, light/dark themes,
+          responsive layout.</div>
+      </section>
+
+      <section id="about" class="section card">
+        <div class="about">
+          <div class="me">
+            <img src="mypic.jpg" alt="Mohammed's picture'">
+          </div>
+          <div class="bio">
+            <h2>About</h2>
+            <p id="objective">Motivated student with strong problem-solving skills and proficiency in JavaScript and
+              Python, seeking an entry-level opportunity to apply academic learning to real-world software development.
+            </p>
+            <div style="margin-top:10px;color:var(--muted);font-size:13px">
+              <div><strong>Email:</strong> <a href="mailto:iammohammedashiq@gmail.com">iammohammedashiq@gmail.com</a>
+              </div>
+              <div><strong>GitHub:</strong> <a href="https://github.com/mohammedash-iq/"
+                  target="_blank">mohammedash-iq</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <h2 style="margin:0;padding-left: 5px;">Projects</h2>
+      <section id="projects" class="section">
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+
+          <div style="color:var(--muted);font-size:13px">(Loaded dynamically)</div>
+        </div>
+
+        <div id="projects" aria-live="polite"></div>
+      </section>
+
+      <section id="skills" class="section card">
+        <h2>Skills</h2>
+        <p style="color:var(--muted);margin-top:6px">Core skills and technologies I use regularly.</p>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Git</span>
+        </div>
+      </section>
+
+      <section id="contact" class="section card">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Open to entry-level roles, internships and freelance work. Prefer frontend and
+          full-stack projects. Fluent in English, Hindi, Kannada.</p>
+        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+          <a class="btn" href="mailto:iammohammedashiq@gmail.com">Email</a>
+          <a class="btn" href="http://www.linkedin.com/in/mohammed-ash" target="_blank">LinkedIn</a>
+          <a class="btn" href="https://github.com/mohammedash-iq/" target="_blank">GitHub</a>
+          <a class="btn" href="Mohammed-Ashiq-CV-2.pdf" target="_blank">Resume</a>
+        </div>
+      </section>
+
+      <footer>
+        <div>© Mohammed Ashiq — Built with HTML, CSS & JavaScript</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
