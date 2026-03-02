@@ -1,108 +1,131 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <title>Mohammed Ashiq — Portfolio</title>
-  <meta name="description" content="Portfolio — Mohammed Ashiq | Frontend Developer" />
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammed Ashiq | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
+        .text-gradient { 
+            background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
 </head>
+<body class="text-gray-800 antialiased">
 
-<body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="logo">MA</div>
-        <div>
-          <div style="font-weight:700">Mohammed Ashiq</div>
-          <div style="font-size:12px;color:var(--muted)">Mangalore, Karnataka</div>
+    <nav class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter">MA.</div>
+        <div class="space-x-6 text-sm font-semibold">
+            <a href="#about" class="hover:text-purple-600 transition">About</a>
+            <a href="#skills" class="hover:text-purple-600 transition">Skills</a>
+            <a href="#projects" class="hover:text-purple-600 transition">Projects</a>
+            <a href="mailto:iammohammedashiq@gmail.com" class="px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-purple-600 transition">Contact</a>
         </div>
-      </div>
+    </nav>
 
-      <nav>
-        <a class="nav-link" href="#projects">Projects</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <div class="controls">
-          <button id="toggleTheme" class="btn" title="Toggle light/dark" style="font-size:18px;line-height:1"><img
-              src="toggle.png" alt=""></button>
-
+    <header class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-start">
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4">
+            Hi, I'm <span class="text-green-500">Mohammed Ashiq</span>.
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-500 mb-8 max-w-2xl leading-relaxed">
+            A detail-oriented BCA student and full-stack developer specializing in building modern web applications and backend systems.
+        </p>
+        <div class="flex space-x-4">
+            <a href="https://linkedin.com/in/mohammed-ash" target="_blank" class="px-6 py-3 border border-gray-300 rounded-lg hover:border-purple-500 hover:text-purple-600 transition font-medium">LinkedIn</a>
+            <a href="https://mohammedash-iq.github.io" target="_blank" class="px-6 py-3 border border-gray-300 rounded-lg hover:border-pink-500 hover:text-pink-600 transition font-medium">GitHub / Portfolio</a>
         </div>
-      </nav>
     </header>
 
-    <main>
-      <section class="hero card">
-        <div class="headline">Frontend-focused developer — building practical, maintainable web apps</div>
-        <div class="sub">Minimal, modern portfolio with a developer vibe. Dynamic project loading, light/dark themes,
-          responsive layout.</div>
-      </section>
+    <section id="skills" class="bg-white py-20 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
+            <div class="flex flex-wrap gap-3">
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">JavaScript</span>
+                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Python</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Node.js</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Express.js</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">React.js</span>
+                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Zustand</span>
+                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">MySQL</span>
+                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">PostgreSQL</span>
+                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Git</span>
+                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Tailwind CSS</span>
+                 </div>
+        </div>
+    </section>
 
-      <section id="about" class="section card">
-        <div class="about">
-          <div class="me">
-            <img src="mypic.jpg" alt="Mohammed's picture'">
-          </div>
-          <div class="bio">
-            <h2>About</h2>
-            <p id="objective">Motivated student with strong problem-solving skills and proficiency in JavaScript and
-              Python, seeking an entry-level opportunity to apply academic learning to real-world software development.
-            </p>
-            <div style="margin-top:10px;color:var(--muted);font-size:13px">
-              <div><strong>Email:</strong> <a href="mailto:iammohammedashiq@gmail.com">iammohammedashiq@gmail.com</a>
-              </div>
-              <div><strong>GitHub:</strong> <a href="https://github.com/mohammedash-iq/"
-                  target="_blank">mohammedash-iq</a></div>
+    <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold mb-10">Featured Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
+                <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">B</div>
+                <h3 class="text-xl font-bold mb-3">Full-Stack Blog Platform</h3>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                    A complete blogging platform supporting CRUD operations. Built RESTful APIs and implemented JWT-based authentication. Created a responsive frontend with React, Vite, and Zustand.
+                </p>
+                <div class="flex gap-2 text-xs font-semibold text-gray-500">
+                    <span>Node.js</span> • <span>React</span> • <span>MySQL</span>
+                </div>
             </div>
-          </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
+                <div class="w-12 h-12 bg-purple-100 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">N</div>
+                <h3 class="text-xl font-bold mb-3">n2sql (NLP to SQL)</h3>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                    A full-stack application that converts natural language input into executable SQL queries. Features a Node/Express backend processing queries against a MySQL database.
+                </p>
+                <div class="flex gap-2 text-xs font-semibold text-gray-500">
+                    <span>Express.js</span> • <span>Tailwind CSS</span> • <span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
+                <div class="w-12 h-12 bg-blue-100 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">S</div>
+                <h3 class="text-xl font-bold mb-3">Snake & Ladder (Ongoing)</h3>
+                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
+                    A real-time multiplayer web application with interactive gameplay. Currently designing backend logic for game states, player sessions, and client-server synchronization.
+                </p>
+                <div class="flex gap-2 text-xs font-semibold text-gray-500">
+                    <span>Multiplayer</span> • <span>WebSockets</span> • <span>State Management</span>
+                </div>
+            </div>
+
         </div>
-      </section>
-      <h2 style="margin:0;padding-left: 5px;">Projects</h2>
-      <section id="projects" class="section">
+    </section>
 
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-
-          <div style="color:var(--muted);font-size:13px">(Loaded dynamically)</div>
+    <section class="bg-white py-20 border-t border-gray-100">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Education</h2>
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-gray-900">Bachelor of Computer Applications</h4>
+                    <p class="text-gray-500 text-sm mb-1">Bearys Institute of Emerging Sciences • 2023 - Present</p>
+                    <p class="text-sm font-medium text-purple-600">CGPA: 8.8</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold mb-6">Experience</h2>
+                <div>
+                    <h4 class="text-lg font-semibold text-gray-900">Freelance Graphic Designer</h4>
+                    <p class="text-gray-500 text-sm mb-2">OceanWind & AB Industries</p>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Collaborated with clients to deliver tailored design solutions, ensuring requirements were met and projects delivered on schedule.
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div id="projects" aria-live="polite"></div>
-      </section>
+    <footer class="max-w-5xl mx-auto px-6 py-10 text-center text-sm text-gray-500">
+        <p>Based in Mangalore, Karnataka. • Contact: +91 7022935015</p>
+    </footer>
 
-      <section id="skills" class="section card">
-        <h2>Skills</h2>
-        <p style="color:var(--muted);margin-top:6px">Core skills and technologies I use regularly.</p>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <span class="tag">JavaScript</span>
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">React</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">Git</span>
-        </div>
-      </section>
-
-      <section id="contact" class="section card">
-        <h2>Contact</h2>
-        <p style="color:var(--muted)">Open to entry-level roles, internships and freelance work. Prefer frontend and
-          full-stack projects. Fluent in English, Hindi, Kannada.</p>
-        <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
-          <a class="btn" href="mailto:iammohammedashiq@gmail.com">Email</a>
-          <a class="btn" href="http://www.linkedin.com/in/mohammed-ash" target="_blank">LinkedIn</a>
-          <a class="btn" href="https://github.com/mohammedash-iq/" target="_blank">GitHub</a>
-          <a class="btn" href="Mohammed-Ashiq-CV-2.pdf" target="_blank">Resume</a>
-        </div>
-      </section>
-
-      <footer>
-        <div>© Mohammed Ashiq — Built with HTML, CSS & JavaScript</div>
-      </footer>
-    </main>
-  </div>
-
-  <script src="script.js"></script>
 </body>
-
 </html>
