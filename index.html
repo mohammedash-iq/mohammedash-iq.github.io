@@ -1,131 +1,876 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Ashiq | Portfolio</title>
+
+    <title>Mohammed Ashiq — Full-Stack Developer</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #fafafa; }
-        .text-gradient { 
-            background: linear-gradient(90deg, #ec4899, #8b5cf6, #3b82f6); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+        * {
+            scroll-behavior: smooth;
         }
-        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
-        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+
+        body {
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "SF Pro Display",
+                "SF Pro Text",
+                "Helvetica Neue",
+                Arial,
+                sans-serif;
+
+            background: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .nav-glass {
+            background: rgba(245, 245, 247, 0.78);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .apple-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.03),
+                0 12px 40px rgba(0, 0, 0, 0.04);
+        }
+
+        .apple-card:hover {
+            transform: translateY(-4px);
+            box-shadow:
+                0 8px 30px rgba(0, 0, 0, 0.07),
+                0 24px 60px rgba(0, 0, 0, 0.06);
+        }
+
+        .project-card {
+            transition:
+                transform 0.4s cubic-bezier(.2, .8, .2, 1),
+                box-shadow 0.4s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .hero-gradient {
+            background:
+                radial-gradient(circle at 50% 0%,
+                    rgba(0, 122, 255, 0.10),
+                    transparent 35%);
+        }
+
+        .text-blue {
+            color: #0071e3;
+        }
+
+        .blue-button {
+            background: #0071e3;
+            color: white;
+            transition: all 0.25s ease;
+        }
+
+        .blue-button:hover {
+            background: #0077ed;
+            transform: translateY(-1px);
+        }
+
+        .secondary-button {
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            transition: all 0.25s ease;
+        }
+
+        .secondary-button:hover {
+            background: #f5f5f7;
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .image-strip {
+            scrollbar-width: none;
+        }
+
+        .image-strip::-webkit-scrollbar {
+            display: none;
+        }
+
+        .stat-number {
+            letter-spacing: -0.04em;
+        }
+
+        .section-label {
+            color: #6e6e73;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-title {
+            letter-spacing: -0.055em;
+        }
+
+        .body-copy {
+            color: #6e6e73;
+            line-height: 1.65;
+        }
     </style>
 </head>
-<body class="text-gray-800 antialiased">
 
-    <nav class="max-w-5xl mx-auto px-6 py-8 flex justify-between items-center">
-        <div class="text-2xl font-bold tracking-tighter">MA.</div>
-        <div class="space-x-6 text-sm font-semibold">
-            <a href="#about" class="hover:text-purple-600 transition">About</a>
-            <a href="#skills" class="hover:text-purple-600 transition">Skills</a>
-            <a href="#projects" class="hover:text-purple-600 transition">Projects</a>
-            <a href="mailto:iammohammedashiq@gmail.com" class="px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-purple-600 transition">Contact</a>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav-glass fixed top-0 left-0 right-0 z-50 border-b border-black/[0.06]">
+        <div class="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+
+            <a href="#" class="font-semibold tracking-tight text-[17px]">
+                MA.
+            </a>
+
+            <div class="hidden md:flex items-center gap-8 text-[13px] text-[#424245]">
+                <a href="#about" class="hover:text-black transition">About</a>
+                <a href="#skills" class="hover:text-black transition">Skills</a>
+                <a href="#projects" class="hover:text-black transition">Projects</a>
+
+                <a href="mailto:iammohammedashiq@gmail.com" class="blue-button px-4 py-1.5 rounded-full">
+                    Contact
+                </a>
+            </div>
+
         </div>
     </nav>
 
-    <header class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col items-start">
-        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-            Hi, I'm <span class="text-green-500">Mohammed Ashiq</span>.
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-500 mb-8 max-w-2xl leading-relaxed">
-            A detail-oriented BCA student and full-stack developer specializing in building modern web applications and backend systems.
-        </p>
-        <div class="flex space-x-4">
-            <a href="https://linkedin.com/in/mohammed-ash" target="_blank" class="px-6 py-3 border border-gray-300 rounded-lg hover:border-purple-500 hover:text-purple-600 transition font-medium">LinkedIn</a>
-            <a href="https://mohammedash-iq.github.io" target="_blank" class="px-6 py-3 border border-gray-300 rounded-lg hover:border-pink-500 hover:text-pink-600 transition font-medium">GitHub / Portfolio</a>
+
+    <!-- Hero -->
+    <header id="about" class="hero-gradient min-h-[90vh] pt-32 md:pt-40 pb-24 flex items-center">
+        <div class="max-w-6xl mx-auto px-6 w-full">
+
+            <div class="max-w-4xl">
+
+                <p class="section-label mb-6">
+                    Full-Stack Developer
+                </p>
+
+                <h1 class="hero-title text-5xl md:text-7xl lg:text-[88px] font-semibold leading-[0.98] mb-8">
+                    Building software<br>
+                    that feels simple.
+                </h1>
+
+                <p class="body-copy text-xl md:text-2xl max-w-2xl mb-10">
+                    I'm Mohammed Ashiq, a BCA student and full-stack developer
+                    focused on building modern web applications, real-time
+                    systems, and thoughtful user experiences.
+                </p>
+
+                <div class="flex flex-wrap gap-3">
+
+                    <a href="#projects" class="blue-button px-6 py-3 rounded-full text-sm font-medium">
+                        View projects
+                    </a>
+
+                    <a href="https://linkedin.com/in/mohammed-ash" target="_blank"
+                        class="secondary-button px-6 py-3 rounded-full text-sm font-medium">
+                        LinkedIn
+                    </a>
+
+                    <a href="https://github.com/mohammedash-iq" target="_blank"
+                        class="secondary-button px-6 py-3 rounded-full text-sm font-medium">
+                        GitHub / Portfolio
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
     </header>
 
-    <section id="skills" class="bg-white py-20 border-t border-gray-100">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-8">Technical Skills</h2>
-            <div class="flex flex-wrap gap-3">
-                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">JavaScript</span>
-                <span class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">Python</span>
-                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Node.js</span>
-                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Express.js</span>
-                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">React.js</span>
-                <span class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold">Zustand</span>
-                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">MySQL</span>
-                <span class="px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold">PostgreSQL</span>
-                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Git</span>
-                <span class="px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-semibold">Tailwind CSS</span>
-                 </div>
-        </div>
-    </section>
 
-    <section id="projects" class="max-w-5xl mx-auto px-6 py-20">
-        <h2 class="text-3xl font-bold mb-10">Featured Projects</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
-                <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">B</div>
-                <h3 class="text-xl font-bold mb-3">Full-Stack Blog Platform</h3>
-                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                    A complete blogging platform supporting CRUD operations. Built RESTful APIs and implemented JWT-based authentication. Created a responsive frontend with React, Vite, and Zustand.
-                </p>
-                <div class="flex gap-2 text-xs font-semibold text-gray-500">
-                    <span>Node.js</span> • <span>React</span> • <span>MySQL</span>
-                </div>
-            </div>
+    <!-- Intro -->
+    <section class="bg-white border-y border-black/[0.06]">
+        <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
 
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
-                <div class="w-12 h-12 bg-purple-100 text-purple-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">N</div>
-                <h3 class="text-xl font-bold mb-3">n2sql (NLP to SQL)</h3>
-                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                    A full-stack application that converts natural language input into executable SQL queries. Features a Node/Express backend processing queries against a MySQL database.
-                </p>
-                <div class="flex gap-2 text-xs font-semibold text-gray-500">
-                    <span>Express.js</span> • <span>Tailwind CSS</span> • <span>MySQL</span>
-                </div>
-            </div>
+            <div class="grid md:grid-cols-3 gap-12">
 
-            <div class="bg-white p-8 rounded-2xl border border-gray-100 card-hover">
-                <div class="w-12 h-12 bg-blue-100 text-blue-500 rounded-xl flex items-center justify-center mb-6 text-xl font-bold">S</div>
-                <h3 class="text-xl font-bold mb-3">Snake & Ladder (Ongoing)</h3>
-                <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                    A real-time multiplayer web application with interactive gameplay. Currently designing backend logic for game states, player sessions, and client-server synchronization.
-                </p>
-                <div class="flex gap-2 text-xs font-semibold text-gray-500">
-                    <span>Multiplayer</span> • <span>WebSockets</span> • <span>State Management</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="bg-white py-20 border-t border-gray-100">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="text-2xl font-bold mb-6">Education</h2>
-                <div class="mb-6">
-                    <h4 class="text-lg font-semibold text-gray-900">Bachelor of Computer Applications</h4>
-                    <p class="text-gray-500 text-sm mb-1">Bearys Institute of Emerging Sciences • 2023 - Present</p>
-                    <p class="text-sm font-medium text-purple-600">CGPA: 8.8</p>
-                </div>
-            </div>
-            <div>
-                <h2 class="text-2xl font-bold mb-6">Experience</h2>
                 <div>
-                    <h4 class="text-lg font-semibold text-gray-900">Freelance Graphic Designer</h4>
-                    <p class="text-gray-500 text-sm mb-2">OceanWind & AB Industries</p>
-                    <p class="text-sm text-gray-600 leading-relaxed">
-                        Collaborated with clients to deliver tailored design solutions, ensuring requirements were met and projects delivered on schedule.
+                    <p class="section-label mb-3">01</p>
+                    <h2 class="text-2xl font-semibold tracking-tight">
+                        Full-stack thinking
+                    </h2>
+                </div>
+
+                <div class="md:col-span-2">
+                    <p class="text-xl md:text-2xl leading-relaxed tracking-tight">
+                        I work across the interface, application layer,
+                        APIs, databases and real-time infrastructure —
+                        with an emphasis on keeping the architecture
+                        understandable.
                     </p>
                 </div>
+
             </div>
+
         </div>
     </section>
 
-    <footer class="max-w-5xl mx-auto px-6 py-10 text-center text-sm text-gray-500">
-        <p>Based in Mangalore, Karnataka. • Contact: +91 7022935015</p>
+
+    <!-- Skills -->
+    <section id="skills" class="py-24 md:py-32">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <p class="section-label mb-4">Technology</p>
+
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight mb-14">
+                Tools I build with.
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">JavaScript</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Language</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Python</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Language</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Node.js</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Backend</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Express.js</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">API</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">React</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Frontend</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Zustand</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">State</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">MySQL</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Database</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">PostgreSQL</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Database</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Tailwind CSS</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">UI</p>
+                </div>
+
+                <div class="apple-card rounded-2xl p-6">
+                    <p class="font-medium">Git</p>
+                    <p class="text-sm text-[#6e6e73] mt-2">Version control</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+
+    <section id="projects" class="bg-white py-24 md:py-32">
+
+
+        <h2 class="text-4xl md:text-6xl font-semibold tracking-tight mb-10  ml-16">
+            Projects with purpose.
+        </h2>
+
+        <article class="project-card apple-card rounded-[28px] overflow-hidden">
+
+            <div class="p-8 md:p-12 lg:p-16">
+
+                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+
+                    <div class="max-w-3xl">
+
+                        <p class="section-label mb-5">
+                            Real-time systems · Ongoing
+                        </p>
+
+                        <h3 class="text-4xl md:text-6xl font-semibold tracking-tight mb-6">
+                            Snake & Ladder
+                        </h3>
+
+                        <p class="text-xl md:text-2xl leading-relaxed tracking-tight mb-8">
+                            A real-time browser game built around
+                            WebSockets, authoritative backend game
+                            state, multiplayer matchmaking and
+                            single-player gameplay against a computer.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mb-10">
+
+                            <span class="px-4 py-2 rounded-full bg-[#f5f5f7] text-sm">
+                                React
+                            </span>
+
+                            <span class="px-4 py-2 rounded-full bg-[#f5f5f7] text-sm">
+                                Tailwind CSS
+                            </span>
+
+                            <span class="px-4 py-2 rounded-full bg-[#f5f5f7] text-sm">
+                                Node.js
+                            </span>
+
+                            <span class="px-4 py-2 rounded-full bg-[#f5f5f7] text-sm">
+                                WebSockets
+                            </span>
+
+                            <span class="px-4 py-2 rounded-full bg-[#f5f5f7] text-sm">
+                                Real-time state
+                            </span>
+
+                        </div>
+
+                        <a href="https://github.com/mohammedash-iq/snakeladder-arena" target="_blank"
+                            class="blue-button inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium">
+                            View on GitHub
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Architecture -->
+                <div class="mt-16 pt-12 border-t border-black/[0.07]">
+
+                    <p class="section-label mb-8">
+                        How it works
+                    </p>
+
+                    <div class="grid md:grid-cols-3 gap-4">
+
+                        <div class="bg-[#f5f5f7] rounded-2xl p-7">
+
+                            <div class="text-sm text-[#6e6e73] mb-8">
+                                01
+                            </div>
+
+                            <h4 class="text-xl font-semibold mb-3">
+                                Multiplayer matchmaking
+                            </h4>
+
+                            <p class="text-[#6e6e73] leading-relaxed">
+                                Players connect through WebSockets.
+                                When no opponent is available, the
+                                connection enters a waiting list.
+                                A second player triggers automatic
+                                matchmaking and creates a live game room.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-[#f5f5f7] rounded-2xl p-7">
+
+                            <div class="text-sm text-[#6e6e73] mb-8">
+                                02
+                            </div>
+
+                            <h4 class="text-xl font-semibold mb-3">
+                                Backend-controlled gameplay
+                            </h4>
+
+                            <p class="text-[#6e6e73] leading-relaxed">
+                                The backend owns the game state,
+                                player positions, turns, dice rolls,
+                                move validation and match results.
+                                The frontend renders the state rather
+                                than independently calculating it.
+                            </p>
+
+                        </div>
+
+
+                        <div class="bg-[#f5f5f7] rounded-2xl p-7">
+
+                            <div class="text-sm text-[#6e6e73] mb-8">
+                                03
+                            </div>
+
+                            <h4 class="text-xl font-semibold mb-3">
+                                Play against the computer
+                            </h4>
+
+                            <p class="text-[#6e6e73] leading-relaxed">
+                                Single-player games use a dedicated
+                                game room. After the player's move,
+                                the backend waits briefly, performs
+                                the computer's move, updates the
+                                room and continues the cycle.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- System -->
+                <div class="mt-8 grid md:grid-cols-2 gap-4">
+
+                    <div class="bg-black text-white rounded-2xl p-8">
+
+                        <p class="text-white/50 text-sm mb-6">
+                            System architecture
+                        </p>
+
+                        <div class="space-y-5 text-sm">
+
+                            <div class="flex justify-between border-b border-white/10 pb-4">
+                                <span class="text-white/60">Frontend</span>
+                                <span>React + Tailwind</span>
+                            </div>
+
+                            <div class="flex justify-between border-b border-white/10 pb-4">
+                                <span class="text-white/60">Transport</span>
+                                <span>WebSocket</span>
+                            </div>
+
+                            <div class="flex justify-between border-b border-white/10 pb-4">
+                                <span class="text-white/60">Backend</span>
+                                <span>Node.js + ws</span>
+                            </div>
+
+                            <div class="flex justify-between">
+                                <span class="text-white/60">State</span>
+                                <span>In-memory game rooms</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bg-[#f5f5f7] rounded-2xl p-8">
+
+                        <p class="text-[#6e6e73] text-sm mb-6">
+                            Real-time events
+                        </p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                WAITING
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                GAME-STARTED
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                MOVE
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                INVALID-MOVE
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                WON
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                LOST
+                            </span>
+
+                            <span class="px-3 py-2 bg-white rounded-lg text-sm">
+                                ERROR
+                            </span>
+
+                        </div>
+
+                        <p class="text-[#6e6e73] text-sm leading-relaxed mt-7">
+                            Player actions are sent to the backend,
+                            which validates the request, updates the
+                            game room and broadcasts the resulting state.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Screenshots -->
+                <div class="mt-16 pt-12 border-t border-black/[0.07]">
+
+                    <div class="flex justify-between items-end mb-8">
+
+                        <div>
+                            <p class="section-label mb-2">
+                                Interface
+                            </p>
+
+                            <h4 class="text-2xl md:text-3xl font-semibold tracking-tight">
+                                The game in action.
+                            </h4>
+                        </div>
+
+                        <span class="hidden md:block text-sm text-[#6e6e73]">
+                            Scroll to explore
+                        </span>
+
+                    </div>
+
+
+                    <div class="image-strip flex gap-5 overflow-x-auto pb-4">
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/1.png" alt="Snake and Ladder multiplayer game"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/2.png" alt="Snake and Ladder game interface"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/3.png" alt="Snake and Ladder gameplay"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/4.png" alt="Snake and Ladder multiplayer screen"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/5.png" alt="Snake and Ladder gameplay screen"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                        <div
+                            class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                            <img src="/images/multiplayer-game/6.png" alt="Snake and Ladder game result"
+                                class="w-full h-full object-cover">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+        <div class="max-w-6xl mx-auto px-6">
+
+
+            <!-- Blog -->
+            <article class="project-card apple-card rounded-[28px] overflow-hidden mb-8">
+
+                <div class="grid md:grid-cols-2">
+
+                    <div class="p-8 md:p-12 lg:p-16">
+
+                        <p class="section-label mb-5">
+                            Full-stack application
+                        </p>
+
+                        <h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-5">
+                            Full-Stack Blog Platform
+                        </h3>
+
+                        <p class="body-copy text-lg mb-8">
+                            A complete blogging platform with CRUD operations,
+                            RESTful APIs and JWT-based authentication.
+                            The frontend uses React, Vite and Zustand to
+                            provide a responsive application experience.
+                        </p>
+
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#6e6e73] mb-8">
+                            <span>Node.js</span>
+                            <span>React</span>
+                            <span>MySQL</span>
+                            <span>JWT</span>
+                            <span>REST API</span>
+                        </div>
+
+                    </div>
+
+                    <div class="bg-[#f5f5f7] min-h-[360px] flex items-center justify-center">
+
+                        <div class="text-center px-8">
+
+                            <div class="text-6xl font-semibold tracking-tight">
+                                Blog
+                            </div>
+
+                            <p class="text-[#6e6e73] mt-3">
+                                Content management from API to interface.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Bite Balance -->
+            <article class="project-card apple-card rounded-[28px] overflow-hidden mb-8">
+                <div class="grid md:grid-cols-2">
+
+                    <div class="p-8 md:p-12 lg:p-16">
+
+                        <p class="section-label mb-5">
+                            Full-stack application
+                        </p>
+
+                        <h3 class="text-3xl md:text-4xl font-semibold tracking-tight mb-5">
+                            Bite Balance
+                        </h3>
+
+                        <p class="body-copy text-lg mb-8">
+                            A food and nutrition-focused web application designed to
+                            help users make more informed decisions about what they eat.
+                            The project combines a practical user interface with
+                            application logic to create a focused food-management
+                            experience.
+                        </p>
+
+                        <div class="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#6e6e73] mb-8">
+                            <span>Web Application</span>
+                            <span>React</span>
+                            <span>Tailwind CSS</span>
+                        </div>
+
+                        <a href="https://github.com/mohammedash-iq/bite-balance" target="_blank"
+                            rel="noopener noreferrer"
+                            class="blue-button inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium">
+                            View on GitHub
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- Screenshots -->
+                <div class="px-8 md:px-12 lg:px-16 pb-12">
+
+                    <div class="pt-10 border-t border-black/[0.07]">
+
+                        <div class="flex justify-between items-end mb-7">
+
+                            <div>
+                                <p class="section-label mb-2">
+                                    Interface
+                                </p>
+
+                                <h4 class="text-2xl md:text-3xl font-semibold tracking-tight">
+                                    Bite Balance in action.
+                                </h4>
+                            </div>
+
+                            <span class="hidden md:block text-sm text-[#6e6e73]">
+                                Scroll to explore
+                            </span>
+
+                        </div>
+
+                        <div class="image-strip flex gap-5 overflow-x-auto pb-4">
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/1.png" alt="Bite Balance screen 1"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/2.png" alt="Bite Balance screen 2"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/3.png" alt="Bite Balance screen 3"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/4.png" alt="Bite Balance screen 4"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/5.png" alt="Bite Balance screen 5"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                            <div
+                                class="min-w-[280px] md:min-w-[420px] aspect-[16/10] bg-[#f5f5f7] rounded-2xl overflow-hidden">
+                                <img src="/images/bite-balance/6.png" alt="Bite Balance screen 6"
+                                    class="w-full h-full object-cover">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Education / Experience -->
+    <section class="py-24 md:py-32">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-6">
+
+                <!-- Education -->
+                <div class="apple-card rounded-[28px] p-8 md:p-12">
+
+                    <p class="section-label mb-8">
+                        Education
+                    </p>
+
+                    <h2 class="text-3xl font-semibold tracking-tight mb-5">
+                        Bachelor of Computer Applications
+                    </h2>
+
+                    <p class="text-[#6e6e73] mb-3">
+                        Bearys Institute of Emerging Sciences
+                    </p>
+
+                    <p class="text-[#6e6e73] text-sm mb-6">
+                        2023 — Present
+                    </p>
+
+                    <div class="text-4xl font-semibold tracking-tight">
+                        8.8
+                        <span class="text-base font-normal text-[#6e6e73]">
+                            CGPA
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- Experience -->
+                <div class="apple-card rounded-[28px] p-8 md:p-12">
+
+                    <p class="section-label mb-8">
+                        Experience
+                    </p>
+
+                    <h2 class="text-3xl font-semibold tracking-tight mb-5">
+                        Freelance Graphic Designer
+                    </h2>
+
+                    <p class="text-[#6e6e73] mb-6">
+                        OceanWind & AB Industries
+                    </p>
+
+                    <p class="body-copy">
+                        Collaborated with clients to deliver tailored
+                        design solutions, translating requirements into
+                        practical visual outcomes while keeping projects
+                        aligned with deadlines.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section class="bg-black text-white py-28">
+
+        <div class="max-w-6xl mx-auto px-6">
+
+            <p class="text-white/50 text-sm mb-6">
+                Let's build something.
+            </p>
+
+            <h2 class="text-5xl md:text-7xl font-semibold tracking-[-0.05em] max-w-4xl leading-tight mb-10">
+                Have an idea?
+                <span class="text-white/40">
+                    Let's talk.
+                </span>
+            </h2>
+
+            <a href="mailto:iammohammedashiq@gmail.com"
+                class="inline-flex px-7 py-3.5 rounded-full bg-white text-black font-medium hover:bg-gray-200 transition">
+                Get in touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white/50 border-t border-white/10">
+
+        <div class="max-w-6xl mx-auto px-6 py-8">
+
+            <div class="flex flex-col md:flex-row justify-between gap-4 text-sm">
+
+                <p>
+                    © 2026 Mohammed Ashiq
+                </p>
+
+                <p>
+                    Mangalore, Karnataka · India
+                </p>
+
+                <a href="tel:+917022935015" class="hover:text-white transition">
+                    +91 7022935015
+                </a>
+
+            </div>
+
+        </div>
+
     </footer>
 
 </body>
+
 </html>
